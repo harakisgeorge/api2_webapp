@@ -1,0 +1,43 @@
+.searchpage-container {
+  min-height: 70vh;
+  display: grid;
+  place-items: center;
+  margin: 0 auto;
+}
+
+.searchpage-title h3 {
+  font-family: Quicksand, sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 35px;
+}
+.searchpage-underline {
+  height: 0.25rem;
+  width: 5rem;
+  background: var(--clr-primary-5);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.searchpage-container-inputContainer {
+  background: var(--clr-white);
+  padding: 1.5rem 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--light-shadow);
+  transition: var(--transition);
+  text-align: center;
+  min-width: 768px;
+}
+
+.searchpage-input {
+  padding: 1.2rem 1rem;
+  font-size: 2rem;
+  min-width: 430px;
+}
+
+.searchpage-button {
+  padding: 1.2rem 1rem;
+  background-color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  font-family: Quicksand, sans-serif;
+}
