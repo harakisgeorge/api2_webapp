@@ -84,23 +84,26 @@ const AutoComplete = ({ suggestions }) => {
 
     
    return (
-      <>
+      <div class="autocomplete-container">
         <div className="grid-autocomplete"> 
           <input
           type="text"
           onChange={onChange}
           value={input}
+          className="autocomplete-input"
           />
           {showSuggestions && input && <SuggestionsListComponent />}
         </div>
         {name!="" &&
           
-          <div className='page-error'>
-                  <h1>{name}</h1>
-                  back to movies
-        </div>        
+          <div className='results-container'>
+              <img src={flag} />
+              <h1>{nativeName}</h1>
+              <h3>{capital}</h3>
+              <h4>Population: {population}</h4>
+          </div>        
         }
-      </>
+      </div>
   );
  
   

@@ -42,9 +42,7 @@ export const SearchPage = () => {
             <div className="searchpage-underline"></div>
          </div>
          <form className="searchpage-container-inputContainer" onSubmit={handleSubmit}>
-            <Autocomplete onChange={handleChange} suggestions={data}/>
-            
-            <button className="searchpage-button" type='submit' >Search</button>
+           <Autocomplete onChange={handleChange} suggestions={data}/>
          </form>
       </div>
      </>

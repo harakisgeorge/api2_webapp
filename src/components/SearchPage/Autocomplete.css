@@ -34,3 +34,27 @@ input {
 .suggestions li:not(:last-of-type) {
   border-bottom: 1px solid #999;
 }
+
+.autocomplete-input {
+  text-align: center;
+}
+.suggestions {
+  width: 100%;
+}
+.autocomplete-container {
+  display: flex;
+  flex-direction: column;
+  width: 768px;
+}
+
+.results-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.results-container img {
+  width: 368px;
+  border: 0.15rem solid var(--clr-grey-8);
+}
