@@ -96,7 +96,7 @@ const AutoComplete = ({ suggestions }) => {
         {name!="" &&
           
           <div className='page-error'>
-                  <h1>{error.msg}</h1>
+                  <h1>{name}</h1>
                   back to movies
         </div>        
         }
