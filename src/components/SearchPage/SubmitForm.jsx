@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
-import styled from "@emotion/styled";
 import axios from "axios"; 
-import Header from "../../components/Header";
-const Container = styled.div`
-  margin-top: 150px;
-`;
+
 class SubmitForm extends Component {
   state = {
     name: '',

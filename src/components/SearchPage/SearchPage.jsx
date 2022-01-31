@@ -1,56 +1,53 @@
 import React, {useEffect, useState} from 'react'
 import "./SearchPage.css"
+import Autocomplete from "./Autocomplete"
 import axios from "axios"
 export const SearchPage = () => {
    const [data, setData] = useState({  });
    const [error, setError] = useState(false)
    const [query,setQuery] = useState("");
-   const handleSubmit = (e) => {
+
+
+   const handleSubmit = async (e) => {
       e.preventDefault()
-      try {
-         const user = {
-           name: this.state.name
-         }
-         axios.post('https://jsonplaceholder.typicode.com/users', { user })
-           .then(res=>{
-             console.log(res);
-             console.log(res.data);
-             window.location = "/retrieve" //This line of code will redirect you once the submission is succeed
-           })
-      } catch (error) {
-        setError(true)
-        console.log(error)
-      }
+      console.log(query)
+     
     }
    const handleChange = e =>{
       //e.preventDefault();
       setQuery(e.target.value);
       console.log(query)
     }
+
    useEffect(async () => {
       let result;
         result = await axios(
           'https://restcountries.com/v3.1/all',
         );
-      
-      setData(result.data);
-      console.log(result.data);
+      var arr = [];
+      console.log(result)
+        Object.keys(result.data).forEach(function(key) {
+          arr.push(result.data[key].name.common);
+          //console.log(arr)
+        });
+      setData(arr);
+
+      console.log(arr);
     },[]);
    return (
+     <>
       <div className="searchpage-container">
          <div className="searchpage-title">
             <h3>Country generator</h3>
             <div className="searchpage-underline"></div>
          </div>
          <form className="searchpage-container-inputContainer" onSubmit={handleSubmit}>
-            <input type="text" 
-                  name="query" 
-                  className="searchpage-input" 
-                  placeholder="Type in country e.g Spain "
-                  onChange={handleChange}/>
+            <Autocomplete onChange={handleChange} suggestions={data}/>
+            
             <button className="searchpage-button" type='submit' >Search</button>
          </form>
       </div>
+     </>
    )
 }
 

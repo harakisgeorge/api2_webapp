@@ -1,5 +1,10 @@
 .searchpage-container {
-  min-height: 70vh;
+  background: var(--clr-white);
+  padding: 1.5rem 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--light-shadow);
+  transition: var(--transition);
+  min-height: 100vh;
   display: grid;
   place-items: center;
   margin: 0 auto;
@@ -19,12 +24,11 @@
 }
 
 .searchpage-container-inputContainer {
-  background: var(--clr-white);
-  padding: 1.5rem 2rem;
-  border-radius: var(--radius);
-  box-shadow: var(--light-shadow);
-  transition: var(--transition);
+  display: flex;
+  justify-content: center;
+
   text-align: center;
+  min-height: 360px;
   min-width: 768px;
 }
 
@@ -39,5 +43,10 @@
   background-color: white;
   font-size: 2rem;
   cursor: pointer;
+  max-height: 80px;
   font-family: Quicksand, sans-serif;
+}
+.grid-autocomplete {
+  display: flex;
+  flex-direction: column;
 }
